@@ -26,3 +26,4 @@ Then visit: http://localhost:8000
 - `index.html` — page structure
 - `styles.css` — page styling
 - `script.js` — calculation logic
+# Simple-Interest-Calculator
