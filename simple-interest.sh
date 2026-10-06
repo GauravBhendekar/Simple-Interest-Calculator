@@ -1,21 +1,28 @@
-#!/usr/bin/env bash
+ #!/bin/bash
+   # This script calculates simple interest given principal,
+   # annual rate of interest and time period in years.
 
-read -rp "Enter principal amount: " principal
-read -rp "Enter rate of interest (%): " rate
-read -rp "Enter time period (years): " time
+   # Do not use this in production. Sample purpose only.
 
-if ! [[ "$principal" =~ ^[0-9]+([.][0-9]+)?$ ]] || ! [[ "$rate" =~ ^[0-9]+([.][0-9]+)?$ ]] || ! [[ "$time" =~ ^[0-9]+([.][0-9]+)?$ ]]; then
-  echo "Error: Principal, rate, and time must be valid numbers."
-  exit 1
-fi
+   # Author: Upkar Lidder (IBM)
+   # Additional Authors:
+   # <your GitHub username>
 
-if (( $(awk -v p="$principal" -v r="$rate" -v t="$time" 'BEGIN { print (p < 0 || r < 0 || t < 0) ? 1 : 0 }') )); then
-  echo "Error: Principal, rate, and time cannot be negative."
-  exit 1
-fi
+   # Input:
+   # p, principal amount
+   # t, time period in years
+   # r, annual rate of interest
 
-interest=$(awk -v p="$principal" -v r="$rate" -v t="$time" 'BEGIN { printf "%.2f", (p * r * t) / 100 }')
-total=$(awk -v p="$principal" -v i="$interest" 'BEGIN { printf "%.2f", p + i }')
+   # Output:
+   # simple interest = p*t*r
 
-echo "Simple Interest: $interest"
-echo "Total Amount: $total"
+   echo "Enter the principal:"
+   read p
+   echo "Enter time period in years:"
+   read t
+   echo "Enter rate of interest per year:"
+   read r
+
+   s=$(echo "scale=2; $p * $t * $r / 100" | bc)
+   echo "The simple interest is: "
+   echo $s
