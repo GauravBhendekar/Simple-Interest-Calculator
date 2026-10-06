@@ -1,29 +1,10 @@
-# Simple Interest Calculator
+# This is the README.md file for the **github-final-project**
 
-A simple responsive website that calculates the interest and total amount using the simple interest formula:
+A calculator that calculates simple interest given principal, annual rate of interest and time period in years.
 
-`Interest = (Principal × Rate × Time) / 100`
-
-## Features
-
-- Input for principal amount, annual interest rate, and time in years
-- Calculated interest and total amount
-- Responsive layout for desktop and mobile devices
-- Clear button to reset the form
-
-## Run locally
-
-Open `index.html` directly in a browser, or serve the project with a local web server:
-
-```bash
-python -m http.server 8000
-```
-
-Then visit: http://localhost:8000
-
-## Files
-
-- `index.html` — page structure
-- `styles.css` — page styling
-- `script.js` — calculation logic
-# Simple-Interest-Calculator
+Input:
+   p, principal amount
+   t, time period in years
+   r, annual rate of interest
+Output
+   simple interest = p*t*r/100
