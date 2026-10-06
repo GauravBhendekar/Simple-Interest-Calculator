@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Interest Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="calculator">
+    <h1>Simple Interest Calculator</h1>
+
+    <form id="interest-form">
+      <label for="principal">Principal Amount</label>
+      <div class="input-group">
+        <span>$</span>
+        <input id="principal" type="number" min="0" step="0.01" placeholder="e.g. 1000" required />
+      </div>
+
+      <label for="rate">Annual Interest Rate</label>
+      <div class="input-group">
+        <input id="rate" type="number" min="0" step="0.01" placeholder="e.g. 5" required />
+        <span>%</span>
+      </div>
+
+      <label for="time">Time (Years)</label>
+      <div class="input-group">
+        <input id="time" type="number" min="0" step="0.1" placeholder="e.g. 3" required />
+        <span>yr</span>
+      </div>
+
+      <div class="button-row">
+        <button type="submit">Calculate</button>
+        <button type="button" class="secondary" id="clear-btn">Clear</button>
+      </div>
+    </form>
+
+    <section class="result" aria-live="polite">
+      <p>Interest</p>
+      <h2 id="interest-result">$0.00</h2>
+      <p>Total Amount</p>
+      <h3 id="total-result">$0.00</h3>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
